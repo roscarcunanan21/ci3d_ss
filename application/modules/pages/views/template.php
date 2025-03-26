@@ -89,7 +89,13 @@
 			<nav class="menu">
 				<div class="menu__inner">
                     <a><span>BRAND NEW LUXURY BEACHSIDE PENTHOUSES</span></a>
-                    <a href="#enquire" class="menu__enquire-now  "><span>Enquire Now</span></a>
+<!--                    <a href="#enquire" class="menu__enquire-now  "><span>Enquire Now</span></a>-->
+					<?php if (!$this->session->userdata('is_logged_in')) : ?>
+					<a href="register" class="menu__enquire-now  "><span>Register</span></a>
+					<a href="login" class="menu__enquire-now  "><span>Login</span></a>
+					<?php else : ?>
+					<a href="logout" class="menu__enquire-now  "><span>Logout</span></a>
+					<?php endif; ?>
 				</div>
 			</nav>
 		</div>

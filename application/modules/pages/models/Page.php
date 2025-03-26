@@ -9,9 +9,6 @@ class page extends CI_Model {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->data['x'] = 1;
-		$this->load->model('admin/module');
-		$this->_validViewArray = array();
 	}
 
 	public function fetch($id = FALSE, $args = FALSE)
@@ -362,6 +359,12 @@ class page extends CI_Model {
 			WHERE page_row_id = ? 
 			ORDER BY sequence', array($row_id));
 		return ($query->num_rows() > 0)? $query->result() : FALSE;
+	}
+
+	function register_new($p_data)
+	{
+		echo "register new called\n";
+		print_r($p_data);
 	}
 	
 }

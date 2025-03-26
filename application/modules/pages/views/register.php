@@ -7,9 +7,10 @@
 	<?php echo $this->form_validation->show_validation_errors(); ?>
 
 	<?php
-	$form_name = "general_enquiry";
+	$form_name = "registration";
 	$sent = FALSE;
 	$errors = FALSE;
+	$error_message = NULL;
 
 
 	if (isset($form_result) && $form_result)
@@ -21,6 +22,8 @@
 			{
 				$sent = TRUE;
 				$errors = FALSE;
+			} else if ( isset($form_result->form_error_message)) {
+				$error_message = $form_result->form_error_message;
 			}
 		}
 	}
@@ -63,7 +66,7 @@
 		<?php else : ?>
 
 		<h2 class="page-title">
-			Enquire Now
+			Registration
 		</h2>
 
 		<?php if ($errors && validation_errors()) : ?>
@@ -72,9 +75,15 @@
 		</div>
 		<?php endif; ?>
 
+		<?php if (!is_null($error_message)) : ?>
+		<div class="form-validation-errors">
+			<?php echo $error_message; ?>
+		</div>
+		<?php endif; ?>
+
 		<?php /* <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encodeingUTF-8" method="POST" class="col-xs-60 col-sm-35 center-block"> */ ?>
 		<form action="" method="POST" class="col-xs-60 col-sm-35 center-block">
-			<input type="hidden" name="ref" id="ref" value="general_enquiry">
+			<input type="hidden" name="ref" id="ref" value="registration">
 
 			<?php /*
 			<input type="hidden" name="old" value="00D7F000000zUdT">
@@ -91,11 +100,11 @@
 				<input type="email" name="email" value="<?php echo set_value('email'); ?>" placeholder="Email*" title="Email*" required="required" />
 			</div>
 			<div class="row">
+				<input type="password" name="password" value="<?php echo set_value('password'); ?>" placeholder="Password" title="Password"  required="required"/>
+			</div>
+			<div class="row">
 				<button class="button">Submit</button>
 			</div>
-
-			<h1 class="h4" style="font-weight: bold; margin: 1.5em 0 1em; letter-spacing: 0;">Open for Inspection</h1>
-			<h1 class="h4" style="font-weight: normal; text-transform: none; letter-spacing: 0; font-size: 1.325rem; margin-bottom: 1em;">By private appointment only</h1>
 			<!-- <h1 class="h4" style="font-weight: normal; text-transform: none; letter-spacing: 0; font-size: 1.325rem; margin-bottom: 1em;">Saturday – 11am to 12pm</h1>
 			<h1 class="h4" style="font-weight: normal; text-transform: none; letter-spacing: 0; font-size: 1.325rem; margin-bottom: 1em;">Sunday – 11am to 12pm</h1> -->
 

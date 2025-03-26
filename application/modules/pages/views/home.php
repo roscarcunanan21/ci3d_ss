@@ -145,26 +145,26 @@
 			<?php echo validation_errors(); ?>
 		</div>
 		<?php endif; ?>
-
-		<form action="" method="POST" class="col-xs-60 col-sm-35 center-block">
-			<input type="hidden" name="ref" id="ref" value="general_enquiry">
-
-			<div class="row">
-				<input type="text" name="name" value="<?php echo set_value('name'); ?>" placeholder="Full Name*" title="Full Name*" required="required" />
-			</div>
-			<div class="row">
-				<input type="text" name="phone" value="<?php echo set_value('phone'); ?>" placeholder="Phone" title="Phone" />
-			</div>
-			<div class="row">
-				<input type="email" name="email" value="<?php echo set_value('email'); ?>" placeholder="Email*" title="Email*" required="required" />
-			</div>
-			<div class="row">
-				<button class="button">Submit</button>
-			</div>
-
-			<h1 class="h4" style="font-weight: bold; margin: 1.5em 0 1em; letter-spacing: 0;">To experience what this penthouse has to offer an inspection is a must</h1>
-
-		</form>
+<!---->
+<!--		<form action="" method="POST" class="col-xs-60 col-sm-35 center-block">-->
+<!--			<input type="hidden" name="ref" id="ref" value="general_enquiry">-->
+<!---->
+<!--			<div class="row">-->
+<!--				<input type="text" name="name" value="--><?php //echo set_value('name'); ?><!--" placeholder="Full Name*" title="Full Name*" required="required" />-->
+<!--			</div>-->
+<!--			<div class="row">-->
+<!--				<input type="text" name="phone" value="--><?php //echo set_value('phone'); ?><!--" placeholder="Phone" title="Phone" />-->
+<!--			</div>-->
+<!--			<div class="row">-->
+<!--				<input type="email" name="email" value="--><?php //echo set_value('email'); ?><!--" placeholder="Email*" title="Email*" required="required" />-->
+<!--			</div>-->
+<!--			<div class="row">-->
+<!--				<button class="button">Submit</button>-->
+<!--			</div>-->
+<!---->
+<!--			<h1 class="h4" style="font-weight: bold; margin: 1.5em 0 1em; letter-spacing: 0;">To experience what this penthouse has to offer an inspection is a must</h1>-->
+<!---->
+<!--		</form>-->
 
 		<?php endif; ?>
 	</div>
